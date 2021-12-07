@@ -96,7 +96,7 @@
      Input comes from cin through the Token_stream called ts.
 */
 
-#include "../std_lib_facilities.h"
+#include "std_lib_facilities.h"
 
 // declaration for tokens/magic constants
 const char number = '8';        
@@ -345,7 +345,7 @@ double primary();       // used in sqrt_f()
 double pow_f(Token t) {
     t = ts.get();
     if (t.kind != '(') {
-        error("'(‘ expected");
+        error("'(Â‘ expected");
     }
     double d = expression();
     t = ts.get();
@@ -368,7 +368,7 @@ double pow_f(Token t) {
 double sqrt_f(Token t) {
     t = ts.get();
     if (t.kind != '(') {
-        error("'(‘ expected");
+        error("'(Â‘ expected");
     }
     ts.putback(t);
     double d = primary();
@@ -561,7 +561,7 @@ double expression()
 //------------------------------------------------------------------------------
 
 // handle: name = expression
-// declare a variable called "name” with the initial value "expression”
+// declare a variable called "nameÂ” with the initial value "expressionÂ”
 // m will be "let" or "constant"
 double declaration(Token m)
 {
