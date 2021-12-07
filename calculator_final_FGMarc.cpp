@@ -448,7 +448,7 @@ double primary()
         Token next_t = ts.get();
         if (next_t.kind == '=') {	// handle name = expression
             double d = expression();
-            st.set(next_t.name, d);
+            st.set(t.name, d);
             return d;
         }
         else {
